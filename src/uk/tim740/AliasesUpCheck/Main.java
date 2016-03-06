@@ -42,8 +42,11 @@ public class Main extends JavaPlugin {
             Bukkit.getServer().getLogger().severe(e.getCause().getMessage());
         }
         if (!Objects.equals(fv, s)){
-            Bukkit.getServer().getLogger().warning("[skAliasesVerCheck] A new version of the aliases is out v" + v + " (Currently using v" + fv.replaceAll("#! VERSION: ", "").replaceAll("!", "") + ")");
+            String av = fv.replaceAll("#! VERSION: ", "").replaceAll("!", "");
+            Bukkit.getServer().getLogger().warning("[skAliasesVerCheck] A new version of the aliases is out v" + v + " (Currently using v" + av + ")");
             Bukkit.getServer().getLogger().warning("[skAliasesVerCheck] You can find the latest version here: https://forums.skunity.com/t/latest-aliases-v1-9-id-order-full-1-9-support/40");
+
+            Bukkit.broadcast("[skAliasesVerCheck] A new version of the aliases is out v" + v + " (Currently using v" + av + ")", "skAliasesVerCheck.notice");
             Bukkit.broadcast("[skAliasesVerCheck] You can find the latest version here: https://forums.skunity.com/t/latest-aliases-v1-9-id-order-full-1-9-support/40", "skAliasesVerCheck.notice");
         }else{
             Bukkit.getServer().getLogger().info("[skAliasesVerCheck] It seems like your using the latest version!");
