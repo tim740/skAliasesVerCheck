@@ -1,0 +1,2 @@
+# skAliasesVerCheck
+Aliases Version Checker
