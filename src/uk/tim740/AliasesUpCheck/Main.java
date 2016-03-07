@@ -23,8 +23,8 @@ public class Main extends JavaPlugin {
         getLogger().info("Checking for update now you will be notified if there is an update!");
         String v = "";
         try {
-            URL url = new URL("https://tim740.github.io/aliasesVer");
-            BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+           // URL url = new URL("https://tim740.github.io/aliasesVer");
+            BufferedReader in = new BufferedReader(new InputStreamReader(new URL("https://tim740.github.io/aliasesVer").openStream()));
             String inLi;
             while ((inLi = in.readLine()) != null)
                 v = inLi;
