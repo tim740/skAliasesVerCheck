@@ -16,7 +16,7 @@ public class Main extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-        verChkTimer();
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, this::verChk, 1L, 864000L);
     }
 
     public void verChk() {
@@ -47,23 +47,5 @@ public class Main extends JavaPlugin {
         }else{
             getLogger().info("It seems like your using the latest version!");
         }
-    }
-
-    public void verChkTimer() {
-        Thread t = new Thread() {
-            @SuppressWarnings("InfiniteLoopStatement")
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        verChk();
-                        Thread.sleep(1000*60*60*12);
-                    } catch (InterruptedException e) {
-                        getLogger().severe(e.getCause().getMessage());
-                    }
-                }
-            }
-        };
-        t.start();
     }
 }
