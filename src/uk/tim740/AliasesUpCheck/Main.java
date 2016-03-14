@@ -24,9 +24,7 @@ public class Main extends JavaPlugin {
         String v = "";
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(new URL("https://tim740.github.io/aliasesVer").openStream()));
-            String inLi;
-            while ((inLi = in.readLine()) != null)
-                v = inLi;
+            v = in.readLine();
             in.close();
         } catch (Exception e) {
             getLogger().severe(e.getCause().getMessage());
