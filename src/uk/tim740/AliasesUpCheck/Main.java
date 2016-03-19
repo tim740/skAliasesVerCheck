@@ -23,16 +23,17 @@ public class Main extends JavaPlugin {
         getLogger().info("Checking for update now you will be notified if there is an update!");
         String v = "";
         try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(new URL("https://tim740.github.io/aliasesVer").openStream()));
-            v = in.readLine();
-            in.close();
+            BufferedReader ur = new BufferedReader(new InputStreamReader(new URL("https://tim740.github.io/aliasesVer").openStream()));
+            v = ur.readLine();
+            ur.close();
         } catch (Exception e) {
             getLogger().severe(e.getCause().getMessage());
         }
         String fv = "";
         try {
-            BufferedReader br = new BufferedReader(new FileReader("plugins\\Skript\\aliases-english.sk"));
-            fv = br.readLine().replaceAll("#! VERSION: ", "").replaceAll("!", "");
+            BufferedReader fr = new BufferedReader(new FileReader("plugins\\Skript\\aliases-english.sk"));
+            fv = fr.readLine().replaceAll("#! VERSION: ", "").replaceAll("!", "");
+            fr.close();
         } catch (Exception e) {
             getLogger().severe(e.getCause().getMessage());
         }
