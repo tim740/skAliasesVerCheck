@@ -12,6 +12,12 @@ import static org.bukkit.Bukkit.getLogger;
 
 /**
  * Created by tim740 on 09/08/2016
+ *
+ * If you which to add this class into your skript fork
+ * all you should need is this class and a way to trigger the method
+ * i suggest adding a option to disabling aliases update checking
+ * for those who don't want to have this checking for updates
+ *
  */
 class AliasesUpdater {
     static void check() {
