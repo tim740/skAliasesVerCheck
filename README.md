@@ -1,3 +1,0 @@
-# skAliasesVerCheck
-
-Aliases Version Checker
